@@ -47,6 +47,12 @@ class ImageDisplayFragment : Fragment() {
         }
     }
 
+
+    fun setImages(_images: IntArray) {
+        images = _images
+        (view as RecyclerView).adapter = CustomRecyclerAdapter(images)
+    }
+
     companion object {
         fun newInstance(images: IntArray) =
             ImageDisplayFragment().apply {
