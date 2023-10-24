@@ -18,16 +18,16 @@ class MainActivity : AppCompatActivity() {
         var fragment = ImageDisplayFragment.newInstance(imageArray)
 
 //        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) !is ImageDisplayFragment) {
-        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) == null) {
-
-            supportFragmentManager
-                .beginTransaction()
-                .add(R.id.fragmentContainerView, fragment)
+//        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) == null) {
+//
+//            supportFragmentManager
+//                .beginTransaction()
+//                .add(R.id.fragmentContainerView, fragment)
 //                .replace(R.id.fragmentContainerView, ImageDisplayFragment())
-                .addToBackStack(null)
-                .setReorderingAllowed(true)
-                .commit()
-        }
+//                .addToBackStack(null)
+//                .setReorderingAllowed(true)
+//                .commit()
+//        }
 
         fun imageSelected(itemId: Int) {
             Toast.makeText(this, "You selected $itemId", Toast.LENGTH_SHORT).show()
