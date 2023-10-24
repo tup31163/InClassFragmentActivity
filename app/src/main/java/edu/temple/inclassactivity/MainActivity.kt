@@ -17,5 +17,7 @@ class MainActivity : AppCompatActivity() {
         var fragment = ImageDisplayFragment.newInstance(imageArray)
 
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment).commit()
+
+//        new branch
     }
 }
