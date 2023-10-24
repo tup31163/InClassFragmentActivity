@@ -18,6 +18,5 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment).commit()
 
-//        new branch
     }
 }
