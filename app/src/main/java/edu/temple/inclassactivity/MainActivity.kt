@@ -5,9 +5,17 @@ import android.os.Bundle
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var some : Array<Int>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        meta-programming
+//        if (::some.isInitialized) {
+//
+//        }
 
         // Fetch images into IntArray called imageArray
         val typedArray = resources.obtainTypedArray(R.array.image_ids)
