@@ -16,7 +16,16 @@ class MainActivity : AppCompatActivity() {
         // Attach an instance of ImageDisplayFragment using factory method
         var fragment = ImageDisplayFragment.newInstance(imageArray)
 
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment).commit()
+        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) !is ImageDisplayFragment) {
+
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragmentContainerView, fragment)
+//                .replace(R.id.fragmentContainerView, ImageDisplayFragment())
+                .addToBackStack(null)
+                .setReorderingAllowed(true)
+                .commit()
+        }
 
     }
 }
