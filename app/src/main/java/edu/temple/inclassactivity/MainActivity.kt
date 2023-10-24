@@ -2,6 +2,7 @@ package edu.temple.inclassactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         // Attach an instance of ImageDisplayFragment using factory method
         var fragment = ImageDisplayFragment.newInstance(imageArray)
 
-        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) !is ImageDisplayFragment) {
+//        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) !is ImageDisplayFragment) {
+        if (supportFragmentManager.findFragmentById(R.id.fragmentContainerView) == null) {
 
             supportFragmentManager
                 .beginTransaction()
@@ -25,6 +27,10 @@ class MainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .setReorderingAllowed(true)
                 .commit()
+        }
+
+        fun imageSelected(itemId: Int) {
+            Toast.makeText(this, "You selected $itemId", Toast.LENGTH_SHORT).show()
         }
 
     }
